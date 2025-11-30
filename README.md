@@ -75,3 +75,11 @@ Cloudflare обслуживает DNS, SSL termination и проксирован
 - Отдельный Hetzner-сервер с Docker Compose: контейнеры `b2b-api` (NestJS), `b2b-frontend` (Next.js), `b2b-admin-frontend` (Next.js), `reverse-proxy` (NGINX/Caddy).
 - PostgreSQL как Managed DB или отдельный сервер.
 - CI/CD: GitHub Actions, пуш в `main` запускает билд и деплой через SSH.
+
+## 11. План старта разработки
+- **День 0 (kickoff)**: утверждение MVP-объёма (данный документ), согласование окружений (prod/staging), создание репозиториев и базовой CI/CD заготовки.
+- **Неделя 1**: настройка инфраструктурного скелета (NestJS + Prisma + PostgreSQL, Next.js фронты, базовая авторизация и роли), миграции БД для базовых моделей (`Agency`, `AgencyUser`, `AdminUser`, `Booking`).
+- **Неделя 2**: CRUD и списки для `Agencies` и `Bookings` (admin/agent namespace), загрузка файлов в Object Storage с pre-signed URL, первичные экраны кабинетов (Login/Sign up, Dashboard, списки заявок).
+- **Неделя 3**: карточки заявок с вкладками (Details, Travelers, Documents, Chat, History), статусы и истории, базовый чат, внутренние заметки оператора.
+- **Неделя 4**: стабилизация, ручное тестирование, настройка логирования/бэкапов, подготовка к выкладке на staging и демонстрации.
+- **Готовность к прод-старту**: после демонстрации на staging и фикса критичных багов.
